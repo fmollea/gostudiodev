@@ -145,6 +145,11 @@
       font-size: 14px;
       color: var(--text2);
     }
+    .price-note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--text2);
+    }
 
     /* Features */
     .features {
@@ -167,7 +172,7 @@
       border-radius: var(--radius);
       padding: 20px;
     }
-    .feature-card .icon { font-size: 24px; margin-bottom: 8px; }
+    .feature-card .icon { display: flex; align-items: center; margin-bottom: 10px; }
     .feature-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
     .feature-card p { font-size: 14px; color: var(--text2); }
 
@@ -183,7 +188,7 @@
       flex-wrap: wrap;
     }
     .highlight { max-width: 180px; }
-    .highlight .icon { font-size: 32px; margin-bottom: 8px; }
+    .highlight .icon { display: flex; justify-content: center; margin-bottom: 12px; }
     .highlight h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
     .highlight p { font-size: 14px; color: var(--text2); }
 
@@ -196,6 +201,11 @@
     .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 12px; }
     .footer-links a { color: var(--text2); text-decoration: none; font-size: 14px; }
     .footer-links a:hover { color: var(--text); }
+    .footer-meta {
+      font-size: 13px;
+      color: var(--text2);
+      margin-bottom: 8px;
+    }
     .copyright { font-size: 13px; color: var(--text2); }
 
     @media (max-width: 600px) {
@@ -213,6 +223,7 @@
         <a href="#features">Features</a>
         <a href="/pdfbench/privacy/">Privacy</a>
         <a href="/pdfbench/terms/">Terms</a>
+        <a href="/pdfbench/legal/">Legal</a>
       </div>
     </div>
   </nav>
@@ -231,6 +242,7 @@
         </a>
       </div>
       <div class="price-badge">$24.99 one-time purchase &middot; 7-day free trial</div>
+      <p class="price-note">Indicative U.S. price. Final Mac App Store pricing is shown in your local currency and includes applicable taxes where required by law.</p>
     </div>
   </section>
 
@@ -239,32 +251,79 @@
       <h2>Everything you need for PDFs</h2>
       <div class="features-grid">
         <div class="feature-card">
-          <div class="icon">&#128196;</div>
+          <div class="icon">
+            <!-- Organize: pages stacked with arrows -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="8" height="10" rx="1"/>
+              <rect x="13" y="3" width="8" height="10" rx="1"/>
+              <path d="M3 17h18M7 21l-4-4 4-4M17 21l4-4-4-4"/>
+            </svg>
+          </div>
           <h3>Organize</h3>
           <p>Merge, split, rotate, reorder, extract and delete pages with drag-and-drop ease.</p>
         </div>
         <div class="feature-card">
-          <div class="icon">&#128260;</div>
+          <div class="icon">
+            <!-- Convert: document with arrow transforming -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h5"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <path d="M16 16l3 3 3-3M19 19V13"/>
+            </svg>
+          </div>
           <h3>Convert</h3>
           <p>PDF to Word, Excel, images, and more. Import images, HTML and text to PDF.</p>
         </div>
         <div class="feature-card">
-          <div class="icon">&#9889;</div>
+          <div class="icon">
+            <!-- Optimize: document with compress arrows -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <polyline points="8 13 12 17 16 13"/>
+              <line x1="12" y1="17" x2="12" y2="11"/>
+            </svg>
+          </div>
           <h3>Optimize</h3>
           <p>Compress file size, crop margins, resize pages. Keep quality, reduce weight.</p>
         </div>
         <div class="feature-card">
-          <div class="icon">&#128274;</div>
+          <div class="icon">
+            <!-- Secure: document with padlock -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2v-7"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <rect x="14" y="13" width="7" height="6" rx="1"/>
+              <path d="M16 13v-2a2 2 0 014 0v2"/>
+            </svg>
+          </div>
           <h3>Secure</h3>
           <p>Encrypt with passwords, decrypt protected files, redact sensitive content.</p>
         </div>
         <div class="feature-card">
-          <div class="icon">&#9999;&#65039;</div>
+          <div class="icon">
+            <!-- Edit: document with pencil -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h8"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <path d="M17 14l3-3 2 2-3 3-2-2zM14 17l-1 4 4-1"/>
+            </svg>
+          </div>
           <h3>Edit</h3>
           <p>Add watermarks, page numbers, headers, footers and backgrounds to any PDF.</p>
         </div>
         <div class="feature-card">
-          <div class="icon">&#128065;</div>
+          <div class="icon">
+            <!-- OCR: document with scan lines and magnifier -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="8" y1="13" x2="13" y2="13"/>
+              <line x1="8" y1="16" x2="11" y2="16"/>
+              <circle cx="16.5" cy="15.5" r="2"/>
+              <line x1="18.5" y1="17.5" x2="20" y2="19"/>
+            </svg>
+          </div>
           <h3>OCR</h3>
           <p>Recognize text in scanned documents using Apple Vision. Fully offline, fully private.</p>
         </div>
@@ -276,17 +335,37 @@
     <div class="container">
       <div class="highlights-row">
         <div class="highlight">
-          <div class="icon">&#128274;</div>
+          <div class="icon">
+            <!-- Private: shield with checkmark -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
           <h3>100% Private</h3>
           <p>All processing happens on your Mac. No files ever leave your device.</p>
         </div>
         <div class="highlight">
-          <div class="icon">&#128312;</div>
+          <div class="icon">
+            <!-- Native macOS: Apple-style display -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
           <h3>Native macOS</h3>
           <p>Built with SwiftUI. Fast, lightweight, and feels right at home.</p>
         </div>
         <div class="highlight">
-          <div class="icon">&#127760;</div>
+          <div class="icon">
+            <!-- Languages: globe -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
           <h3>6 Languages</h3>
           <p>Available in English, Spanish, German, French, Portuguese and Italian.</p>
         </div>
@@ -299,8 +378,10 @@
       <div class="footer-links">
         <a href="/pdfbench/privacy/">Privacy Policy</a>
         <a href="/pdfbench/terms/">Terms of Use</a>
+        <a href="/pdfbench/legal/">Legal Notice</a>
         <a href="mailto:fmollea@gmail.com">Support</a>
       </div>
+      <p class="footer-meta">Go Studio Dev · Contact: <a href="mailto:fmollea@gmail.com">fmollea@gmail.com</a> · Established in Spain, European Union</p>
       <p class="copyright">&copy; 2026 Go Studio Dev. All rights reserved.</p>
     </div>
   </footer>
