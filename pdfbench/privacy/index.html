@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — PDFBench</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --text2: #555;
+      --accent: #0066ff;
+      --border: #e5e5e5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111;
+        --surface: #1a1a1a;
+        --text: #f0f0f0;
+        --text2: #999;
+        --accent: #4d94ff;
+        --border: #2a2a2a;
+      }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 640px; margin: 0 auto; padding: 0 24px; }
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 20px; font-weight: 700; text-decoration: none; color: var(--text); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--text2); text-decoration: none; font-size: 14px; }
+    .nav-links a:hover { color: var(--text); }
+    main { padding: 60px 0 80px; }
+    h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+    .updated { font-size: 14px; color: var(--text2); margin-bottom: 40px; }
+    h2 { font-size: 20px; font-weight: 600; margin-top: 36px; margin-bottom: 12px; }
+    p { margin-bottom: 16px; color: var(--text2); }
+    ul { margin-bottom: 16px; padding-left: 24px; color: var(--text2); }
+    li { margin-bottom: 8px; }
+    a { color: var(--accent); }
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 12px; }
+    .footer-links a { color: var(--text2); text-decoration: none; font-size: 14px; }
+    .copyright { font-size: 13px; color: var(--text2); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="/pdfbench/" class="logo">PDFBench</a>
+      <div class="nav-links">
+        <a href="/pdfbench/">Home</a>
+        <a href="/pdfbench/terms/">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: May 26, 2026</p>
+
+      <h2>Overview</h2>
+      <p>PDFBench is a macOS application developed by Go Studio Dev ("we", "us", "our"). We are committed to protecting your privacy. This policy explains what data PDFBench accesses and how it is handled.</p>
+
+      <h2>Data We Do Not Collect</h2>
+      <p>PDFBench does not collect, transmit, or store any personal data. Specifically:</p>
+      <ul>
+        <li>We do not collect analytics or usage data.</li>
+        <li>We do not use third-party tracking or advertising SDKs.</li>
+        <li>We do not access your contacts, location, camera, or microphone.</li>
+        <li>We do not transmit any files or data to external servers.</li>
+      </ul>
+
+      <h2>Local Processing</h2>
+      <p>All PDF processing — including merging, splitting, converting, compressing, OCR, and every other tool — happens entirely on your Mac. Your files never leave your device.</p>
+
+      <h2>Local Storage</h2>
+      <p>PDFBench stores the following data locally on your Mac using standard macOS mechanisms (UserDefaults):</p>
+      <ul>
+        <li><strong>App preferences:</strong> theme, language, output folder, compression level, and OCR language settings.</li>
+        <li><strong>Trial information:</strong> the date you first launched the app, used to calculate the trial period.</li>
+        <li><strong>Operation history:</strong> a log of operations you have run, stored locally for your reference.</li>
+      </ul>
+      <p>This data is never transmitted outside your device and can be cleared by removing the app.</p>
+
+      <h2>Purchases</h2>
+      <p>In-app purchases are processed entirely by Apple through the App Store. We do not receive or store any payment information such as credit card numbers or billing addresses. Purchase status is verified locally through Apple's StoreKit framework.</p>
+
+      <h2>OCR (Optical Character Recognition)</h2>
+      <p>Text recognition is powered by Apple's on-device Vision framework. All OCR processing happens locally on your Mac — no text or images are sent to any server.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>PDFBench does not knowingly collect information from children under 13. The app does not collect information from any user.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+
+      <h2>Contact</h2>
+      <p>If you have questions about this Privacy Policy, contact us at <a href="mailto:fmollea@gmail.com">fmollea@gmail.com</a>.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="/pdfbench/">PDFBench</a>
+        <a href="/pdfbench/privacy/">Privacy</a>
+        <a href="/pdfbench/terms/">Terms</a>
+      </div>
+      <p class="copyright">&copy; 2026 Go Studio Dev. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDFBench — All-in-One PDF Toolkit for Mac</title>
+  <meta name="description" content="26 powerful PDF tools in one native macOS app. Merge, split, convert, compress, OCR, redact and more. One-time purchase, no subscription.">
+  <style>
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --text2: #555;
+      --accent: #0066ff;
+      --accent-hover: #0052cc;
+      --border: #e5e5e5;
+      --radius: 12px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111;
+        --surface: #1a1a1a;
+        --text: #f0f0f0;
+        --text2: #999;
+        --accent: #4d94ff;
+        --accent-hover: #6aa6ff;
+        --border: #2a2a2a;
+      }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 20px; font-weight: 700; text-decoration: none; color: var(--text); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--text2); text-decoration: none; font-size: 14px; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 0 60px;
+    }
+    .hero-icon {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, var(--accent), #0044bb);
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      font-size: 18px;
+      color: var(--text2);
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+    .cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .btn-secondary:hover { background: var(--border); }
+
+    /* Price badge */
+    .price-badge {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 6px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 14px;
+      color: var(--text2);
+    }
+
+    /* Features */
+    .features {
+      padding: 60px 0;
+    }
+    .features h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .feature-card .icon { font-size: 24px; margin-bottom: 8px; }
+    .feature-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .feature-card p { font-size: 14px; color: var(--text2); }
+
+    /* Highlights */
+    .highlights {
+      padding: 60px 0;
+      text-align: center;
+    }
+    .highlights-row {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .highlight { max-width: 180px; }
+    .highlight .icon { font-size: 32px; margin-bottom: 8px; }
+    .highlight h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .highlight p { font-size: 14px; color: var(--text2); }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 12px; }
+    .footer-links a { color: var(--text2); text-decoration: none; font-size: 14px; }
+    .footer-links a:hover { color: var(--text); }
+    .copyright { font-size: 13px; color: var(--text2); }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 28px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .highlights-row { gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="/pdfbench/" class="logo">PDFBench</a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="/pdfbench/privacy/">Privacy</a>
+        <a href="/pdfbench/terms/">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/><line x1="9" y1="11" x2="15" y2="11"/></svg>
+      </div>
+      <h1>All-in-one PDF toolkit for Mac</h1>
+      <p class="subtitle">26 powerful tools to organize, convert, optimize, secure and edit your PDFs. Fully offline, built natively for macOS.</p>
+      <div class="cta-group">
+        <a href="#" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83"/><path d="M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11"/></svg>
+          Download on the Mac App Store
+        </a>
+      </div>
+      <div class="price-badge">$24.99 one-time purchase &middot; 7-day free trial</div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <h2>Everything you need for PDFs</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon">&#128196;</div>
+          <h3>Organize</h3>
+          <p>Merge, split, rotate, reorder, extract and delete pages with drag-and-drop ease.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">&#128260;</div>
+          <h3>Convert</h3>
+          <p>PDF to Word, Excel, images, and more. Import images, HTML and text to PDF.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">&#9889;</div>
+          <h3>Optimize</h3>
+          <p>Compress file size, crop margins, resize pages. Keep quality, reduce weight.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">&#128274;</div>
+          <h3>Secure</h3>
+          <p>Encrypt with passwords, decrypt protected files, redact sensitive content.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">&#9999;&#65039;</div>
+          <h3>Edit</h3>
+          <p>Add watermarks, page numbers, headers, footers and backgrounds to any PDF.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">&#128065;</div>
+          <h3>OCR</h3>
+          <p>Recognize text in scanned documents using Apple Vision. Fully offline, fully private.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlights">
+    <div class="container">
+      <div class="highlights-row">
+        <div class="highlight">
+          <div class="icon">&#128274;</div>
+          <h3>100% Private</h3>
+          <p>All processing happens on your Mac. No files ever leave your device.</p>
+        </div>
+        <div class="highlight">
+          <div class="icon">&#128312;</div>
+          <h3>Native macOS</h3>
+          <p>Built with SwiftUI. Fast, lightweight, and feels right at home.</p>
+        </div>
+        <div class="highlight">
+          <div class="icon">&#127760;</div>
+          <h3>6 Languages</h3>
+          <p>Available in English, Spanish, German, French, Portuguese and Italian.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="/pdfbench/privacy/">Privacy Policy</a>
+        <a href="/pdfbench/terms/">Terms of Use</a>
+        <a href="mailto:fmollea@gmail.com">Support</a>
+      </div>
+      <p class="copyright">&copy; 2026 Go Studio Dev. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
